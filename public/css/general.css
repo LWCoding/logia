@@ -32,6 +32,10 @@ button:hover {
     cursor: pointer;
 }
 
+button:focus {
+    outline: none;
+}
+
 a {
     font-size: 13px;
     letter-spacing: 2px;
