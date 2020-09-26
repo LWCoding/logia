@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
 @font-face {
     font-family: "proxima-nova";
     font-weight: 700;
-    src: url("fonts/proxima-nova")
+    src: url("fonts/proxima-nova");
+}
+
+@font-face {
+    font-family: "adobe-garamond-pro";
+    font-weight: 400;
+    src: url("fonts/garamond-pro");
 }
 
 * {
@@ -132,11 +140,65 @@ a:visited {
     margin: 0 1.2em;
 }
 
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 250px;
+    padding: 96px;
+}
+
+.text-block > * {
+    text-align: center;
+}
+
+.text-block > h2 {
+    font-weight: 400;
+    font-size: 38px;
+    letter-spacing: 0.6px;
+    margin-bottom: 0.4em;
+}
+
+.text-block > p {
+    font-size: 21px;
+    font-family: adobe-garamond-pro;
+    color: rgba(80, 80, 80, 0.9);
+}
+
+.small-spacer {
+    min-height: 50px;
+}
+
+#footer {
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 70px;
+    background: rgb(41, 41, 41);
+}
+
+#footer::after {
+    display: block;
+    position: absolute;
+    content: "The Science Network | © 2020";
+    transform: translate(-2em, -50%);
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    top: 50%;
+    right: 0;
+}
+
 @media only screen and (max-width: 812px) {
     #middle-contents > h1 {
         font-size: 50px !important;
     }
     #middle-contents > h1, #middle-contents > button {
         margin-top: 2vh !important;
+    }
+    #footer::after {
+        transform: translate(-2em, -50%);
+        font-size: 16px;
     }
 }
