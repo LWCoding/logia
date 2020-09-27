@@ -26,4 +26,8 @@ router.get("/events", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/events.html"))
 })
 
+router.get("/admin", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/admin.html"))
+})
+
 module.exports = router
