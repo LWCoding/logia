@@ -3,13 +3,13 @@
 @font-face {
     font-family: "proxima-nova";
     font-weight: 700;
-    src: url("fonts/proxima-nova");
+    src: url("../fonts/proxima-nova.otf");
 }
 
 @font-face {
     font-family: "adobe-garamond-pro";
     font-weight: 400;
-    src: url("fonts/garamond-pro");
+    src: url("../fonts/garamond-pro.otf");
 }
 
 * {
@@ -45,7 +45,7 @@ button:focus {
 }
 
 a {
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 2px;
     font-weight: 600;
     color: rgb(224, 224, 224);
@@ -108,7 +108,7 @@ a:visited {
     left: 50%;
     font-weight: 700;
     font-style: normal;
-    font-size: 62px;
+    font-size: 64px;
     line-height: 1.05em;
     letter-spacing: 0.059em;
     transform: translate(-50%, -50%);
@@ -133,7 +133,7 @@ a:visited {
     top: 60px;
     right: 0;
     z-index: 2;
-    margin-right: 1.4em;
+    margin-right: 2.2em;
 }
 
 #navbar > a {
@@ -148,7 +148,7 @@ a:visited {
     padding: 96px;
 }
 
-.text-block > * {
+.text-block * {
     text-align: center;
 }
 
@@ -159,7 +159,7 @@ a:visited {
     margin-bottom: 0.4em;
 }
 
-.text-block > p {
+.text-block p {
     font-size: 21px;
     font-family: adobe-garamond-pro;
     color: rgba(80, 80, 80, 0.9);
@@ -202,6 +202,17 @@ a:visited {
         font-size: 16px;
     }
     .text-block {
-        padding: 32px;
+        padding: 48px;
+    }
+    #navbar {
+        margin-right: 1.2em;
+        top: 47px;
+    }
+    #navbar > a {
+        margin: 0 0.6em;
+    }
+    .logo {
+        top: 16px;
+        left: 16px;
     }
 }
