@@ -15,19 +15,27 @@ router.get("/sitemap.xml", (req, res) => {
 })
 
 router.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/homepage.html"))
+    res.render("homepage", {
+        middleText: "The Science Network"
+    })
 })
 
 router.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/about.html"))
+    res.render("about", {
+        middleText: "About Us"
+    })
 })
 
 router.get("/events", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/events.html"))
+    res.render("events", {
+        middleText: "Upcoming Events"
+    })
 })
 
-router.get("/admin", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/admin.html"))
+router.get("/tsn-admin", (req, res) => {
+    res.render("admin", {
+        middleText: "Admin Dashboard"
+    })
 })
 
 module.exports = router

@@ -2,6 +2,7 @@ $(document).ready(() => {
     $("#to-events").css("color", "rgb(57, 223, 120)")
     $("a").css("transition", "color 0.2 ease")
     fetch("/get-events").then(async (res) => {
+        $("#event-container").empty()
         if (res.ok) {
             const json = await res.json()
             const events = json.events

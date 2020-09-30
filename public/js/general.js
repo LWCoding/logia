@@ -7,4 +7,5 @@ $(document).ready(async () => {
     }, 400)
     $("#overlay").css("transition", "all 0.8s ease")
     $("#overlay").css("opacity", 0)
+    $("a").css("transition", "color 0.4s ease")
 })
