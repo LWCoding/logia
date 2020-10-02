@@ -46,7 +46,7 @@ $(document).ready(() => {
         let joinLink = $("#create-event .joinLink")[0]
         let thumbnail = $("#create-event .thumbnail")[0]
         let memberCap = $("#create-event .memberCap")[0]
-        createEvent(name.value, date.value, description.value, joinLink.value, thumbnail.value, memberCap.value)
+        createEvent(name.value, date.value, description.value, thumbnail.value, joinLink.value, memberCap.value)
     })
     $("#remove-event").click(() => {
         let name = $("#delete-event .name")[0]

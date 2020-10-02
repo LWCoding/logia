@@ -15,7 +15,7 @@ $(document).ready(() => {
                 let event = events[i]
                 $("#event-container").append(`
                 <div class="event">
-                    <img class="thumbnail" src="${event.thumbnail}" alt="Event Thumbnail" onerror="$(this).parent().addClass('noimage'); $(this).remove();">
+                    <img class="thumbnail" src="${event.thumbnail}" alt="Event Thumbnail" onerror="$(this).remove();">
                     <div class="text">
                         <h3 class="name">${event.name}</h3>
                         <p class="date-text">Live <span class="date">${event.month} ${event.day} ${event.year}</span> at <span class="date">${event.time}</span>.</p>
