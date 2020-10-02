@@ -21,8 +21,35 @@
         <![endif]-->
         {{>subheader}}
         <div class="text-block">
-            <h2>This section is currently empty.</h2>
-            <p>Please hold until the future when this is actually implemented.</p>
+            <div id="post-actions">
+                <div class="action" style="background-color: orange;" onclick="$('#create-event').show(450)">
+                    <h3>Create Event</h3>
+                </div>
+                <div class="action" style="background-color: rgb(255, 81, 0);" onclick="$('#delete-event').show(450)">
+                    <h3>Delete Event</h3>
+                </div>
+            </div>
+        </div>
+        <div id="create-event">
+            <div id="screen-cover"></div>
+            <div class="contents">
+                <input class="name" type="text" placeholder="Name (10+ characters)">
+                <input class="date" type="datetime-local">
+                <input class="thumbnail" type="text" placeholder="Thumbnail Image Link">
+                <input class="joinLink" type="text" placeholder="Zoom Meeting Link">
+                <textarea class="description" rows="8" placeholder="Description (150+ characters)"></textarea>
+                <input class="memberCap" type="number" placeholder="Webinar Member Limit (1+)">
+                <button id="submit-event">Create Event</button>
+                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#create-event').hide(350)">Cancel</button>
+            </div>
+        </div>
+        <div id="delete-event">
+            <div id="screen-cover"></div>
+            <div class="contents">
+                <input class="name" type="text" placeholder="Name (Case Insensitive)">
+                <button id="remove-event">Delete Event</button>
+                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#delete-event').hide(350)">Cancel</button>
+            </div>
         </div>
         <div class="small-spacer"></div>
         <script src="./js/general.js" async defer></script>

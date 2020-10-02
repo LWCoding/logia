@@ -10,13 +10,21 @@ $(document).ready(() => {
                 $("#event-container").append("<p>There are currently no scheduled events. Please check again at a later time.</p>")
                 return
             }
+            $(".small-spacer").remove()
             for (let i = 0; i < events.length; i++) {
                 let event = events[i]
                 $("#event-container").append(`
                 <div class="event">
-                    <h3>${event.name}</h3>
-                    <p>${event.month} ${event.day} ${event.year}</p>
-                    <p>${event.description}</p>
+                    <img class="thumbnail" src="${event.thumbnail}" alt="Event Thumbnail" onerror="$(this).parent().addClass('noimage'); $(this).remove();">
+                    <div class="text">
+                        <h3 class="name">${event.name}</h3>
+                        <p class="date-text">Live <span class="date">${event.month} ${event.day} ${event.year}</span> at <span class="date">${event.time}</span>.</p>
+                        <p class="description">${event.description}</p>
+                        <div class="buttons">
+                            <button>RSVP (0/${event.memberCap})</button>
+                            <button style="background: rgb(49, 95, 223);">Info</button>
+                        </div>
+                    </div>
                 </div>
                 `)
             }

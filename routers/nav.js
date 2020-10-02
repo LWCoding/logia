@@ -32,7 +32,10 @@ router.get("/events", (req, res) => {
     })
 })
 
-router.get("/tsn-admin", (req, res) => {
+router.get("/admin", (req, res) => {
+    if (req.query.password !== process.env.ADMIN_PASSWORD) {
+        return res.redirect("/home")
+    }
     res.render("admin", {
         middleText: "Admin Dashboard"
     })

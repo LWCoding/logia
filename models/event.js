@@ -4,6 +4,7 @@ const eventSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
+        unique: true,
         minlength: 1
     },
     date: {
@@ -15,10 +16,16 @@ const eventSchema = mongoose.Schema({
         required: true
     },
     joinLink: {
-        type: String
+        type: String,
+        required: true
     },
     thumbnail: {
-        type: Buffer
+        type: String,
+        required: true
+    },
+    memberCap: {
+        type: String,
+        default: 100
     }
 }, {
     timestamps: true
