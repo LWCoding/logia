@@ -35,9 +35,8 @@
 .event .description {
     font-family: proxima-nova-light;
     width: 100%;
-    margin: auto 0;
+    margin: auto 16px;
     font-size: 19px;
-    margin: 0 16px;
     padding-bottom: 0.8rem;
 }
 
