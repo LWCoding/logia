@@ -182,7 +182,7 @@ a:hover {
 #footer::after {
     display: block;
     position: absolute;
-    content: "The Science Network | © 2020";
+    content: "Logia | © 2020";
     transform: translate(-2em, -50%);
     color: white;
     font-weight: 700;

@@ -49,6 +49,7 @@ eventsRouter.get("/get-events", async (req, res) => {
                 year: event.date.getFullYear(),
                 time: `${event.date.getHours() > 12 ? event.date.getHours() % 12 : event.date.getHours()}:${event.date.getMinutes() == 0 ? "00" : event.date.getMinutes()} ${event.date.getHours() >= 12 ? "PM" : "AM"}`,
                 thumbnail: event.thumbnail,
+                currentMembers: event.currentMembers,
                 memberCap: event.memberCap,
                 joinLink: event.joinLink
             })
