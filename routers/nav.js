@@ -16,7 +16,7 @@ router.get("/sitemap.xml", (req, res) => {
 
 router.get("/home", (req, res) => {
     res.render("homepage", {
-        middleText: "The Science Network"
+        middleText: "Logia"
     })
 })
 
