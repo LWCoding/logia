@@ -31,7 +31,7 @@
 }
 
 #middle-contents > h1 {
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -75%);
 }
 
 #middle-contents > button {
@@ -39,5 +39,5 @@
     position: absolute;
     left: 50%;
     top: 100%;
-    transform: translate(-50%, 160%);
+    transform: translate(-50%, 125%);
 }
