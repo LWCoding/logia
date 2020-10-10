@@ -56,14 +56,3 @@
 .contents textarea {
     resize: none;
 }
-
-#screen-cover {
-    width: 100vw;
-    height: 100vh;
-    background: black;
-    opacity: 0.5;
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-}

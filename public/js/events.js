@@ -11,6 +11,7 @@ $(document).ready(() => {
                 return
             }
             $(".small-spacer").remove()
+            const maxChars = Math.max(100, Math.round($(window).width() / 6))
             for (let i = 0; i < events.length; i++) {
                 let event = events[i]
                 $("#event-container").append(`
@@ -19,10 +20,10 @@ $(document).ready(() => {
                     <div class="text">
                         <h3 class="name">${event.name}</h3>
                         <p class="date-text">Live <span class="date">${event.month} ${event.day} ${event.year}</span> at <span class="date">${event.time}</span>.</p>
-                        <p class="description">${event.description}</p>
+                        <p class="description">${event.description.length > maxChars ? event.description.substr(0, maxChars).trim() + "..." : event.description}</p>
                         <div class="buttons">
                             <button>RSVP (0/${event.memberCap})</button>
-                            <button style="background: rgb(49, 95, 223);">Info</button>
+                            <button style="background: rgb(49, 95, 223);" onclick="$('#info > .name').text('${event.name}'); $('#info > .full-description').text('${event.description}'); $('#screen-cover').fadeIn(350); $('#info').fadeIn(350);">Info</button>
                         </div>
                     </div>
                 </div>

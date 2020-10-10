@@ -119,7 +119,7 @@ a:hover {
 
 .logo {
     position: absolute;
-    height: 90px;
+    height: 80px;
     top: 24px;
     left: 24px;
     z-index: 2;
@@ -147,6 +147,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     min-height: 250px;
+    width: 100vw;
     padding: 96px 128px;
 }
 
@@ -189,6 +190,18 @@ a:hover {
     letter-spacing: 0.8px;
     top: 50%;
     right: 0;
+}
+
+#screen-cover {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    opacity: 0.5;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 @media only screen and (max-width: 812px) {
