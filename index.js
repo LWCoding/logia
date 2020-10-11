@@ -17,8 +17,10 @@ app.use(cors())
 
 const navRouter = require("./routers/nav")
 const eventsRouter = require("./routers/events")
+const emailRouter = require("./routers/emails")
 app.use(navRouter)
 app.use(eventsRouter)
+app.use(emailRouter)
 
 app.listen(port, () => {
     console.log("Listening on port " + port + ".")

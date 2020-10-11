@@ -1,4 +1,5 @@
 const express = require("express")
+const validator = require("validator")
 const Event = require("../models/event")
 
 const eventsRouter = express.Router()
@@ -49,6 +50,7 @@ eventsRouter.get("/get-events", async (req, res) => {
                 year: event.date.getFullYear(),
                 time: `${event.date.getHours() > 12 ? event.date.getHours() % 12 : event.date.getHours()}:${event.date.getMinutes() == 0 ? "00" : event.date.getMinutes()} ${event.date.getHours() >= 12 ? "PM" : "AM"}`,
                 thumbnail: event.thumbnail,
+                memberCount: event.registeredEmails.length,
                 currentMembers: event.currentMembers,
                 memberCap: event.memberCap,
                 joinLink: event.joinLink
@@ -59,6 +61,28 @@ eventsRouter.get("/get-events", async (req, res) => {
         })
     } catch (error) {
         res.status(503).send()
+    }
+})
+
+eventsRouter.patch("/rsvp", async (req, res) => {
+    try {
+        const event = await Event.findOne({name: req.body.event})
+        if (!event) {
+            return res.status(404).send({error: "We couldn't find that event! Is it disabled?"})
+        }
+        if (!validator.isEmail(req.body.email)) {
+            return res.status(400).send({error: "Invalid email provided."})
+        }
+        if (event.registeredEmails.some((email) => email.email.toLowerCase() === req.body.email)) {
+            return res.status(400).send({error: "Already registered for event!"})
+        }
+        event.registeredEmails.push({
+            email: req.body.email
+        })
+        await event.save()
+        res.status(200).send({})
+    } catch (error) {
+        res.status(400).send({error: "Something wrong happened on the server-side."})
     }
 })
 

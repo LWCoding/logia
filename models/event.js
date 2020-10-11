@@ -23,6 +23,12 @@ const eventSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    registeredEmails: [{
+        email: {
+            type: String,
+            required: true
+        }
+    }],
     memberCap: {
         type: String,
         default: 100

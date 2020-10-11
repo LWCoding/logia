@@ -35,7 +35,7 @@
     font-family: proxima-nova-light;
     width: 100%;
     margin: auto 24px;
-    font-size: 18px;
+    font-size: 19px;
     padding-bottom: 0.8rem;
 }
 
@@ -52,7 +52,7 @@
     justify-content: center;
 }
 
-.event button:hover {
+.event button:hover, #close-rsvp:hover {
     opacity: 0.8;
 }
 
@@ -83,7 +83,7 @@
     padding: 0.4em;
 }
 
-.user-email {
+#user-email {
     margin-right: 1em !important;
 }
 
@@ -109,10 +109,10 @@
     padding: 64px 128px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .event button {
-        width: 140px;
-    }
+#rsvp-notice {
+    margin-top: 0.8em;
+    text-align: center;
+    font-size: 17px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -149,6 +149,12 @@
     #info *, #rsvp * {
         width: 280px;
     }
+    #rsvp input {
+        width: 150px;
+    }
+    #submit-rsvp {
+        width: 200px;
+    }
     .event {
         padding: 25px;
     }
@@ -164,6 +170,5 @@
     }
     .event button {
         font-size: 12px;
-        width: 110px;
     }
 }

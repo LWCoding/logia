@@ -15,7 +15,9 @@
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "mongoose": "^5.10.6",
-    "path": "^0.12.7"
+    "nodemailer": "^6.4.13",
+    "path": "^0.12.7",
+    "validator": "^13.1.17"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

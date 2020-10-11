@@ -22,33 +22,47 @@
         {{>subheader}}
         <div class="text-block">
             <div id="post-actions">
-                <div class="action" style="background-color: orange;" onclick="$('#create-event').show(450)">
+                <div class="action" style="background-color: orange;" onclick="$('#screen-cover').show(); $('#create-event').show()">
                     <h3>Create Event</h3>
                 </div>
-                <div class="action" style="background-color: rgb(255, 81, 0);" onclick="$('#delete-event').show(450)">
+                <div class="action" style="background-color: rgb(255, 81, 0);" onclick="$('#screen-cover').show(); $('#delete-event').show()">
                     <h3>Delete Event</h3>
+                </div>
+                <div class="action" style="background-color: rgb(25, 64, 238);" onclick="$('#screen-cover').show(); $('#notify-event').show()">
+                    <h3>Notify Event</h3>
                 </div>
             </div>
         </div>
+        <div id="screen-cover"></div>
         <div id="create-event">
-            <div id="screen-cover"></div>
             <div class="contents">
-                <input class="name" type="text" placeholder="Name (10+ characters)">
+                <input class="name" type="text" placeholder="Event Name (10+ characters)">
                 <input class="date" type="datetime-local">
                 <input class="thumbnail" type="text" placeholder="Thumbnail Image Link">
                 <input class="joinLink" type="text" placeholder="Zoom Meeting Link">
                 <textarea class="description" rows="8" placeholder="Description (150+ characters)"></textarea>
                 <input class="memberCap" type="number" placeholder="Webinar Member Limit (1+)">
                 <button id="submit-event">Create Event</button>
-                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#create-event').hide(350)">Cancel</button>
+                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#screen-cover').fadeOut(350); $('#create-event').hide(350)">Cancel</button>
+                <p id="create-notice" style="display: none;"></p>
             </div>
         </div>
         <div id="delete-event">
-            <div id="screen-cover"></div>
             <div class="contents">
-                <input class="name" type="text" placeholder="Name (Case Insensitive)">
+                <input class="name" type="text" placeholder="Event Name (Case Sensitive)">
                 <button id="remove-event">Delete Event</button>
-                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#delete-event').hide(350)">Cancel</button>
+                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#screen-cover').fadeOut(350); $('#delete-event').hide(350)">Cancel</button>
+                <p id="delete-notice" style="display: none;"></p>
+            </div>
+        </div>
+        <div id="notify-event">
+            <div class="contents">
+                <input class="name" type="text" placeholder="Event Name (Case Sensitive)">
+                <input id="subject" type="text" placeholder="Subject Message">
+                <textarea class="announcement" rows="12" placeholder="Announcement Message"></textarea>
+                <button id="announce-event">Notify RSVPers</button>
+                <button style="background-color: rgb(223, 74, 74); margin-top: 0;" onclick="$('#screen-cover').fadeOut(350); $('#notify-event').hide(350)">Cancel</button>
+                <p id="rsvp-notice" style="display: none;"></p>
             </div>
         </div>
         <div class="small-spacer"></div>
