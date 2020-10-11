@@ -22,12 +22,12 @@
     text-align: center;
     font-family: proxima-nova-light;
     margin-top: 4px 0;
-    font-size: 20px;
+    font-size: 19px;
     color: black;
 }
 
 .name {
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -35,7 +35,7 @@
     font-family: proxima-nova-light;
     width: 100%;
     margin: auto 24px;
-    font-size: 19px;
+    font-size: 18px;
     padding-bottom: 0.8rem;
 }
 
@@ -46,7 +46,7 @@
     flex: 1;
 }
 
-.event .buttons {
+.centered {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -62,7 +62,7 @@
     text-align: center;
 }
 
-#info {
+#info, #rsvp {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -73,9 +73,18 @@
     z-index: 11;
 }
 
-#info * {
+#info *, #rsvp * {
     width: 400px;
     margin: 0 auto;
+}
+
+#rsvp input {
+    font-size: 17px;
+    padding: 0.4em;
+}
+
+.user-email {
+    margin-right: 1em !important;
 }
 
 #info .full-description {
@@ -86,12 +95,12 @@
     margin-bottom: 1.4rem;
 }
 
-#info .buttons {
+#info .centered {
     display: flex;
     flex-direction: column;
 }
 
-#info button {
+#info button, #rsvp button {
     text-align: center;
     flex: 1;
 }
@@ -99,7 +108,6 @@
 .text-block {
     padding: 64px 128px;
 }
-
 
 @media only screen and (max-width: 1200px) {
     .event button {
@@ -138,7 +146,7 @@
 }
 
 @media only screen and (max-width: 450px) {
-    #info * {
+    #info *, #rsvp * {
         width: 280px;
     }
     .event {

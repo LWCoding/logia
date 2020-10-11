@@ -42,7 +42,7 @@ eventsRouter.get("/get-events", async (req, res) => {
         for (let i = 0; i < events.length; i++) {
             let event = events[i]
             sentEvents.push({
-                name: event.name.replace('"', '\"'),
+                name: event.name,
                 description: event.description,
                 month: months[event.date.getMonth()],
                 day: event.date.getDate(),

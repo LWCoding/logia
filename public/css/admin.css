@@ -56,3 +56,10 @@
 .contents textarea {
     resize: none;
 }
+
+@media only screen and (max-width: 600px) {
+    #post-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

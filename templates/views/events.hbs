@@ -28,10 +28,16 @@
         </div>
         <div class="small-spacer"></div>
         <div id="screen-cover"></div>
+        <div id="rsvp">
+            <div class="centered">
+                <input class="user-email" type="text" placeholder="Your Email">
+                <button class="submit-rsvp" style="background: rgb(10, 172, 10);">RSVP</button>
+            </div>
+        </div>
         <div id="info">
             <p class="name"></p>
             <p class="full-description"></p>
-            <div class="buttons">
+            <div class="centered">
                 <button id="join-zoom" style="background: rgb(31, 108, 223);">Join Zoom Meeting</button>
                 <button style="background: rgb(224, 36, 36);" onclick="$('#screen-cover').fadeOut(250); $(this).parents('#info').fadeOut(250)">Close</button>
             </div>

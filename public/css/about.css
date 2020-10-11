@@ -132,8 +132,12 @@
     .image-block {
         flex-direction: column;
     }
+    .image-block > .block-text .title {
+        margin-left: 0;
+    }
     .image-block > .block-text .name {
         margin-bottom: 8px;
+        margin-left: 0;
     }
     .image-block > .block-text .description {
         margin: 0 30px;

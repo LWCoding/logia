@@ -24,13 +24,17 @@ $(document).ready(() => {
                         <p class="date-text">Live <span class="date">${event.month} ${event.day} ${event.year}</span> at <span class="date">${event.time}</span>.</p>
                         <p class="description">${event.description.length > maxChars ? event.description.substr(0, maxChars).trim() + "..." : event.description}</p>
                         <div class="buttons">
-                            <button>RSVP (0/${event.memberCap})</button>
+                            <button class="rsvp-button">RSVP (0/${event.memberCap})</button>
                             <button class="info-button" style="background: rgb(49, 95, 223);">Info</button>
                         </div>
                     </div>
                 </div>
                 `)
             }
+            $(".rsvp-button").click(function() {
+                $('#screen-cover').fadeIn(350);
+                $('#rsvp').fadeIn(350);
+            })
             $(".info-button").click(function() {
                 $('#info > .name').text($(this).parents(".text").find(".name").text());
                 $('#info > .full-description').text($(this).parents(".event").find(".full-description").text());
