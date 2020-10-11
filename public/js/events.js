@@ -70,7 +70,7 @@ $(document).ready(() => {
             })
             $(".info-button").click(function() {
                 $('#info > .name').text($(this).parents(".text").find(".name").text());
-                $('#info > .full-description').text($(this).parents(".event").find(".full-description").text().replaceAll("<", "\\<").replaceAll(">", "\\>"));
+                $('#info > .full-description').text($(this).parents(".event").find(".full-description").text());
                 $('#join-zoom').attr("onclick", "window.open('" + $(this).parents(".event").find(".zoom-link").text() + "', '_blank')");
                 $('#screen-cover').fadeIn(350);
                 $('#info').fadeIn(350);
