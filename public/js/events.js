@@ -16,6 +16,7 @@ $(document).ready(() => {
                 let event = events[i]
                 $("#event-container").append(`
                 <div class="event">
+                    <span class="zoom-link" style="display: none;">${event.joinLink}</span>
                     <img class="thumbnail" src="${event.thumbnail}" alt="Event Thumbnail" onerror="$(this).remove();">
                     <div class="text">
                         <h3 class="name">${event.name}</h3>
@@ -23,12 +24,19 @@ $(document).ready(() => {
                         <p class="description">${event.description.length > maxChars ? event.description.substr(0, maxChars).trim() + "..." : event.description}</p>
                         <div class="buttons">
                             <button>RSVP (0/${event.memberCap})</button>
-                            <button style="background: rgb(49, 95, 223);" onclick="$('#info > .name').text('${event.name.replaceAll("'", "\\'").replaceAll('"', '\\"')}'); $('#info > .full-description').text('${event.description.replaceAll("'", "\\'").replaceAll('"', '\\"')}'); $('#screen-cover').fadeIn(350); $('#info').fadeIn(350);">Info</button>
+                            <button class="info-button" style="background: rgb(49, 95, 223);">Info</button>
                         </div>
                     </div>
                 </div>
                 `)
             }
+            $(".info-button").click(function() {
+                $('#info > .name').text($(this).parents(".text").find(".name").text());
+                $('#info > .full-description').text($(this).parents(".text").find(".description").text());
+                $('#join-zoom').attr("onclick", "window.open('" + $(this).parents(".event").find(".zoom-link").text() + "', '_blank')");
+                $('#screen-cover').fadeIn(350);
+                $('#info').fadeIn(350);
+            })
         } else {
             $("#event-container").append("<p>There was an error loading the events. Please try again later.</p>")
         }
