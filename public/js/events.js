@@ -17,6 +17,7 @@ $(document).ready(() => {
                 $("#event-container").append(`
                 <div class="event">
                     <span class="zoom-link" style="display: none;">${event.joinLink}</span>
+                    <span class="full-description" style="display: none;">${event.description}</span>
                     <img class="thumbnail" src="${event.thumbnail}" alt="Event Thumbnail" onerror="$(this).remove();">
                     <div class="text">
                         <h3 class="name">${event.name}</h3>
@@ -32,7 +33,7 @@ $(document).ready(() => {
             }
             $(".info-button").click(function() {
                 $('#info > .name').text($(this).parents(".text").find(".name").text());
-                $('#info > .full-description').text($(this).parents(".text").find(".description").text());
+                $('#info > .full-description').text($(this).parents(".event").find(".full-description").text());
                 $('#join-zoom').attr("onclick", "window.open('" + $(this).parents(".event").find(".zoom-link").text() + "', '_blank')");
                 $('#screen-cover').fadeIn(350);
                 $('#info').fadeIn(350);
