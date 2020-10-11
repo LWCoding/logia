@@ -23,7 +23,7 @@ $(document).ready(() => {
                         <p class="description">${event.description.length > maxChars ? event.description.substr(0, maxChars).trim() + "..." : event.description}</p>
                         <div class="buttons">
                             <button>RSVP (0/${event.memberCap})</button>
-                            <button style="background: rgb(49, 95, 223);" onclick="$('#info > .name').text('${event.name.replaceAll("'", "\\'")}'); $('#info > .full-description').text('${event.description.replaceAll("'", "\\'")}'); $('#screen-cover').fadeIn(350); $('#info').fadeIn(350);">Info</button>
+                            <button style="background: rgb(49, 95, 223);" onclick="$('#info > .name').text('${event.name.replaceAll("'", "\\'").replaceAll('"', '\\"')}'); $('#info > .full-description').text('${event.description.replaceAll("'", "\\'").replaceAll('"', '\\"')}'); $('#screen-cover').fadeIn(350); $('#info').fadeIn(350);">Info</button>
                         </div>
                     </div>
                 </div>
